@@ -1,4 +1,14 @@
 import NextHead from 'next/head'
+import { styled } from '@stitches/react'
+
+const HeroHeading = styled('h1', {
+  color: 'black',
+  fontSize: '10rem',
+  textTransform: 'uppercase',
+  fontFamily: '"Titillium Web", sans-serif',
+  lineHeight: '80%',
+  fontWeight: 900
+})
 
 export default function HomePage() {
   return (
@@ -6,8 +16,17 @@ export default function HomePage() {
       <NextHead>
         <title>Super Duper Gallery</title>
       </NextHead>
-      <img src="/images/superdupergallery-avatar.jpg" alt="Avatar" />
-      <h1>Super Duper Gallery</h1>
+
+      <header>
+        <img src="/images/superdupergallery-avatar.jpg" alt="Avatar" />
+        <HeroHeading>
+          Super
+          <br />
+          Duper
+          <br />
+          Gallery
+        </HeroHeading>
+      </header>
     </div>
   )
 }
