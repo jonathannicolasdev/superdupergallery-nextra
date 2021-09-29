@@ -10,6 +10,13 @@ const HeroHeading = styled('h1', {
   fontWeight: 900
 })
 
+const Hero = styled('header', {
+  display: 'flex',
+  justifyContent: 'center'
+})
+
+const HeroCenter = styled('div', {})
+
 export default function HomePage() {
   return (
     <div>
@@ -17,16 +24,18 @@ export default function HomePage() {
         <title>Super Duper Gallery</title>
       </NextHead>
 
-      <header>
-        <img src="/images/superdupergallery-avatar.jpg" alt="Avatar" />
-        <HeroHeading>
-          Super
-          <br />
-          Duper
-          <br />
-          Gallery
-        </HeroHeading>
-      </header>
+      <Hero>
+        <HeroCenter>
+          <img src="/images/superdupergallery-avatar.jpg" alt="Avatar" />
+          <HeroHeading>
+            Super
+            <br />
+            Duper
+            <br />
+            Gallery
+          </HeroHeading>
+        </HeroCenter>
+      </Hero>
     </div>
   )
 }
