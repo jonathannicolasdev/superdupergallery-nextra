@@ -42,24 +42,28 @@ const MenuButton = styled('button', {
   fontWeight: 'bold'
 })
 
+const Hero = styled('section', {
+  display: 'flex',
+  justifyContent: 'center',
+  paddingTop: '75px'
+})
+
+const HeroCenter = styled('div', {})
+
 const HeroHeading = styled('h1', {
-  color: 'black',
-  fontSize: '10rem',
+  fontSize: '12rem',
   textTransform: 'uppercase',
   fontFamily: '"Titillium Web", sans-serif',
   lineHeight: '80%',
   fontWeight: 900,
-  color: 'white',
-  letterSpacing: 2
+  letterSpacing: 2,
+  backgroundImage: 'url("/images/hero-text-background.jpg")',
+  color: 'transparent',
+  backgroundClip: 'text',
+  filter: 'brightness(1.5)',
+  '-webkit-text-stroke-width': '2px',
+  '-webkit-text-stroke-color': 'white'
 })
-
-const Hero = styled('section', {
-  display: 'flex',
-  justifyContent: 'center',
-  paddingTop: '100px'
-})
-
-const HeroCenter = styled('div', {})
 
 export default function HomePage() {
   return (
