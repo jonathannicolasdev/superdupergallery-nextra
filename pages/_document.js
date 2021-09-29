@@ -1,5 +1,14 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
+import { globalCss, getCssText } from '../stitches.config'
+
+const globalStyles = globalCss({
+  '*': { margin: 0, padding: 0 },
+  body: {
+    backgroundColor: 'black'
+  }
+})
+
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx)
@@ -7,6 +16,8 @@ class MyDocument extends Document {
   }
 
   render() {
+    globalStyles()
+
     const meta = {
       title: 'Next.js Blog Starter Kit',
       description: 'Clone and deploy your own Next.js portfolio in minutes.',
@@ -29,6 +40,10 @@ class MyDocument extends Document {
           <meta name="twitter:description" content={meta.description} />
           <meta name="twitter:image" content={meta.image} />
 
+          <style
+            id="stitches"
+            dangerouslySetInnerHTML={{ __html: getCssText() }}
+          />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
           <link
