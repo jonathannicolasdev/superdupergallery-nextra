@@ -32,8 +32,12 @@ const HeaderDivider = styled('div', {
 })
 
 const Logo = styled('img', {
-  width: '120px',
-  height: '120px'
+  width: '80px',
+  height: '80px',
+  '@desktop': {
+    width: '120px',
+    height: '120px'
+  }
 })
 
 const Tagline = styled('h2', {
@@ -44,13 +48,17 @@ const Tagline = styled('h2', {
 
 const MenuButton = styled('button', {
   background: 'black',
-  margin: '1em',
   border: '2px solid white',
   borderRadius: '1em',
-  padding: '1em',
+  margin: '0.5em',
+  padding: '0.5em',
   color: 'white',
   textTransform: 'uppercase',
-  fontWeight: 'bold'
+  fontWeight: 'bold',
+  '@desktop': {
+    margin: '1em',
+    padding: '1em'
+  }
 })
 
 const Hero = styled('section', {
@@ -62,7 +70,6 @@ const Hero = styled('section', {
 const HeroCenter = styled('div', {})
 
 const HeroHeading = styled('h1', {
-  fontSize: '12rem',
   textTransform: 'uppercase',
   fontFamily: '"Titillium Web", sans-serif',
   lineHeight: '80%',
@@ -73,7 +80,11 @@ const HeroHeading = styled('h1', {
   backgroundClip: 'text',
   filter: 'brightness(1.5)',
   '-webkit-text-stroke-width': '2px',
-  '-webkit-text-stroke-color': 'white'
+  '-webkit-text-stroke-color': 'white',
+  fontSize: '4.5rem',
+  '@desktop': {
+    fontSize: '11.5rem'
+  }
 })
 
 export default function HomePage() {
