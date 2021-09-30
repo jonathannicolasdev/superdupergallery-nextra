@@ -6,18 +6,29 @@ const Header = styled('header', {
   border: '2px solid white',
   minHeight: '100px',
   display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'space-between'
+  justifyContent: 'space-between',
+  flexDirection: 'column',
+  '@desktop': {
+    flexDirection: 'row',
+    alignItems: 'center'
+  }
+})
+
+const HeaderSegment = styled('div', {
+  display: 'flex',
+  justifyContent: 'center'
 })
 
 const HeaderDivider = styled('div', {
-  borderWidth: '0 2px 0 2px',
-  borderStyle: 'solid',
-  borderColor: 'white',
-  padding: '10px',
-  height: '120px',
-  flex: 1
+  borderTop: '2px solid white',
+  '@desktop': {
+    borderWidth: '0 2px 0 2px',
+    borderStyle: 'solid',
+    borderColor: 'white',
+    padding: '10px',
+    height: '120px',
+    flex: 1
+  }
 })
 
 const Logo = styled('img', {
@@ -73,13 +84,19 @@ export default function HomePage() {
       </NextHead>
 
       <Header>
-        <Logo src="/images/superdupergallery-avatar.jpg" alt="Avatar" />
+        <HeaderSegment>
+          <Logo src="/images/superdupergallery-avatar.jpg" alt="Avatar" />
+        </HeaderSegment>
         <HeaderDivider />
-        <Tagline>
-          Contemporary Art Gallery <br /> based in 🇵🇭 QC, Philippines
-        </Tagline>
+        <HeaderSegment>
+          <Tagline>
+            Contemporary Art Gallery <br /> based in 🇵🇭 QC, Philippines
+          </Tagline>
+        </HeaderSegment>
         <HeaderDivider />
-        <MenuButton>Menu</MenuButton>
+        <HeaderSegment>
+          <MenuButton>Menu</MenuButton>
+        </HeaderSegment>
       </Header>
 
       <Hero>

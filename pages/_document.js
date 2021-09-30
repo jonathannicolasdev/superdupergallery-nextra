@@ -3,7 +3,10 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { globalCss, getCssText } from '../stitches.config'
 
 const globalStyles = globalCss({
-  '*': { margin: 0, padding: 0 },
+  '*': {
+    margin: 0,
+    padding: 0
+  },
   body: {
     backgroundColor: 'black'
   }
@@ -45,7 +48,7 @@ class MyDocument extends Document {
             dangerouslySetInnerHTML={{ __html: getCssText() }}
           />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
           <link
             href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@900&display=swap"
             rel="stylesheet"
